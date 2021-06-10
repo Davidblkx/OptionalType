@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <LangVersion>9.0</LangVersion>
     <RootNamespace>System.Optional</RootNamespace>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
 </Project>
