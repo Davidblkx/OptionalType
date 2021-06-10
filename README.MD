@@ -75,3 +75,14 @@ var newOp = op.Map(
     none: () => 0
 ); // Option<int>
 ```
+
+### Merge values
+
+```C#
+var op1 = Some("Hello");
+string? world = null;
+
+var message = op1
+    .Merge(world, (a, b) => $"{a} {b}")
+    .ValueOr("") // ""
+```

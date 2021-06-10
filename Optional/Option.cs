@@ -1,4 +1,6 @@
-﻿namespace System.Optional
+﻿using System.Threading.Tasks;
+
+namespace System.Optional
 {
     /// <summary>
     /// Base option type

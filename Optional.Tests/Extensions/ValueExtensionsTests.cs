@@ -1,8 +1,8 @@
 ﻿using Xunit;
+using System;
 using System.Optional;
 
 using static System.Optional.Option;
-using System;
 
 namespace Optional.Tests.Extensions
 {

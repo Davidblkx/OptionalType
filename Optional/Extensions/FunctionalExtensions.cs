@@ -31,5 +31,22 @@
                 return Option.Some(val).ToType<K>();
             return Option.Some(none());
         }
+
+        /// <summary>
+        /// Merge to Options
+        /// </summary>
+        public static Option<Z> MergeOption<T, K, Z>(this Option<T> o1, Option<K> o2, Func<T, K, Z> some)
+        {
+            if (o1.TryGetValue(out var v1) && o2.TryGetValue(out var v2))
+                return Option.Some(some(v1, v2));
+
+            return Option.None<Z>();
+        }
+
+        /// <summary>
+        /// Covert <paramref name="o2"/> to Option and merge it
+        /// </summary>
+        public static Option<Z> Merge<T, K, Z>(this Option<T> o1, K o2, Func<T, K, Z> some)
+            => o1.MergeOption(Option.Some(o2), some);
     }
 }
